@@ -136,3 +136,8 @@ def printer_error(s)
   #represent as a fraction
   "#{s.count("n-z")}/#{(s.length)}"
 end
+
+#sorted? yes? no? how?
+def is_sorted_and_how(arr)
+    arr == arr.sort ? "yes, ascending" : arr == arr.sort.reverse ? "yes, descending" : "no"
+end
