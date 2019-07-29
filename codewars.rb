@@ -141,3 +141,17 @@ end
 def is_sorted_and_how(arr)
     arr == arr.sort ? "yes, ascending" : arr == arr.sort.reverse ? "yes, descending" : "no"
 end
+
+#Anagram detection
+def is_anagram(test, original)
+  test.downcase.chars.sort == original.downcase.chars.sort
+end
+
+#Regex password validation
+#match if:
+# one uppercase
+# one lowercase
+# one digit 
+# no special characters
+# at least 6 characters long
+regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])^[a-zA-Z0-9]{6,}$/
