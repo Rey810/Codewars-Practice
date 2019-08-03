@@ -155,3 +155,9 @@ end
 # no special characters
 # at least 6 characters long
 regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])^[a-zA-Z0-9]{6,}$/
+
+
+
+def kebabize
+  str.gsub(/[0-9]/, "").split(/(?=[A-Z])/).join("-").downcase
+end
