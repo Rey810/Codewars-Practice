@@ -161,3 +161,16 @@ regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])^[a-zA-Z0-9]{6,}$/
 def kebabize
   str.gsub(/[0-9]/, "").split(/(?=[A-Z])/).join("-").downcase
 end
+
+#abbreviate words of more than 4 letters 
+#to show the 1st letter + the # of letters 
+#between the first and last + the last letter
+class Abbreviator
+
+  def self.abbreviate(string)
+    string.gsub /(\w)(\w+{2})(\w)/ do |word|
+      "#{$1}#{word.length-2}#{$3}" 
+      end
+  end
+  
+end
