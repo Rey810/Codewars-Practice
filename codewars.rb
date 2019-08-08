@@ -225,3 +225,11 @@ end
 def dashatize(num)
   num ? num.to_s.scan(/[02468]+|[13579]/).join("-") : "nil"
 end
+
+
+#autocomplete input with matches found in ta dictionary
+def autocomplete(input, dictionary)
+  mod_input = input.gsub(/[^a-zA-Z]/,"") 
+  dictionary.select { |word| word if word.start_with?(mod_input.downcase) || word.start_with?(mod_input.capitalize)}
+    .first(5)
+end
