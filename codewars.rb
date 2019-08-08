@@ -214,3 +214,9 @@ def encrypt_this(text)
     word
     } .join(" ")
 end
+
+# +1 array 
+def up_array(arr)
+  return nil if arr.empty? || arr.any? {|num| 0 > num || num > 9 }
+  (arr.join.to_i + 1).to_s.split("").map(&:to_i)
+end
