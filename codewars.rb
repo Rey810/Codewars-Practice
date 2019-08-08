@@ -220,3 +220,8 @@ def up_array(arr)
   return nil if arr.empty? || arr.any? {|num| 0 > num || num > 9 }
   (arr.join.to_i + 1).to_s.split("").map(&:to_i)
 end
+
+#add a dash before and after each odd number 
+def dashatize(num)
+  num ? num.to_s.scan(/[02468]+|[13579]/).join("-") : "nil"
+end
