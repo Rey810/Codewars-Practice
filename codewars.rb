@@ -227,7 +227,7 @@ def dashatize(num)
 end
 
 
-#autocomplete input with matches found in ta dictionary
+#autocomplete input with matches found in a dictionary
 def autocomplete(input, dictionary)
   mod_input = input.gsub(/[^a-zA-Z]/,"") 
   dictionary.select { |word| word if word.start_with?(mod_input.downcase) || word.start_with?(mod_input.capitalize)}
