@@ -233,3 +233,16 @@ def autocomplete(input, dictionary)
   dictionary.select { |word| word if word.start_with?(mod_input.downcase) || word.start_with?(mod_input.capitalize)}
     .first(5)
 end
+
+
+#string input of names (eg. "Rey:van den Berg;Joe:Blythe")
+#sort by last name and return in this format  "(BLYTHE, JOE)(VAN DEN BERG, REY)"
+def meeting(s)
+    s
+    .upcase
+    .split(";")
+    .map { |name| name.split(":") }
+    .sort_by { |first, last| [last, first]}
+    .map { |first, last| "(#{last}, #{first})"}
+    .join
+end
