@@ -255,3 +255,33 @@ def iq_test(numbers)
   x = numbers.split.map(&:to_i).map(&:even?)
   x.count(true) > 1 ? x.index(false) : x.index(true)
 end
+
+#This kata is designed to test your ability to extend the functionality of built-in classes. 
+#In this case, we want you to extend the built-in Array class with the following methods: 
+#square(), cube(), average(), sum(), even() and odd().
+
+class Array
+  def square
+    map {|x| x*x}
+  end
+
+  def cube
+    map {|x| x**3}
+  end
+  
+  def average
+    sum / size
+  end
+  
+  def sum
+    reduce(:+)
+  end
+  
+  def even
+    select(&:even?)
+  end
+  
+  def odd
+    select(&:odd?)
+  end
+end
