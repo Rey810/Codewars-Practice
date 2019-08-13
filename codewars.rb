@@ -246,3 +246,12 @@ def meeting(s)
     .map { |first, last| "(#{last}, #{first})"}
     .join
 end
+
+
+# Find out which one of the given numbers differs from the others. 
+# One number usually differs from the others in evenness. 
+# Find one that is different in evenness, and return a position of this number.
+def iq_test(numbers)
+  x = numbers.split.map(&:to_i).map(&:even?)
+  x.count(true) > 1 ? x.index(false) : x.index(true)
+end
